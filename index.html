@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maryam - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Heebo', sans-serif;
+      margin: 0;
+      background-color: #F7F9FC;
+      color: #21243D;
+      animation: fadeInAnimation ease 1s;
+    }
+
+    @keyframes fadeInAnimation {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+
+    * { box-sizing: border-box; }
+
+    h1, h2, h3 { font-weight: 700; margin: 0; }
+    h1 { font-size: 44px; line-height: 60px; }
+    h2 { font-size: 28px; margin-bottom: 20px; }
+    h3 { font-size: 22px; margin-bottom: 10px; }
+    p { font-size: 16px; line-height: 24px; margin: 0; }
+    a { text-decoration: none; }
+
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .main-header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 82px;
+      padding-right: 20px;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 33px;
+    }
+
+    .main-nav a {
+      color: #000;
+      font-weight: 500;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .main-nav a:hover {
+      color: #FF6464;
+    }
+
+    .hero-section {
+      padding: 90px 0 70px 0;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .hero-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 500px;
+      animation: slideInFromLeft 1s ease-in-out;
+    }
+
+    @keyframes slideInFromLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .hero-text h1 {
+      margin-bottom: 30px;
+    }
+
+    .hero-text p {
+      margin-bottom: 30px;
+    }
+
+    .btn-resume {
+      background-color: #FF6464;
+      color: white;
+      padding: 12px 20px;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-resume:hover {
+      background-color: #e05555;
+    }
+
+    .hero-image img {
+      width: 243px;
+      height: 243px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      box-shadow: -10px 12px 0px 0px #EDF7FA;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .section-block {
+      background-color: #F7F9FC;
+      padding: 40px 20px;
+      margin-bottom: 20px;
+    }
+
+    .card-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+
+    .card {
+      background-color: #fff;
+      width: 100%;
+      max-width: 280px;
+      min-height: 200px;
+      border-radius: 8px;
+      padding: 22px 27px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border: 1px solid #D3D8E8;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #21243D;
+      text-transform: uppercase;
+    }
+
+    .card-icon {
+      font-size: 18px;
+      background: linear-gradient(90deg, #FF6464, #3B82F6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .card-body {
+      flex-grow: 1;
+    }
+
+    .card-body p, .card-body ul, .card-body a {
+      color: #21243D;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .card-body h4 {
+        margin: 10px 0 5px;
+        font-size: 15px;
+    }
+
+    .card-body ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .card-body li {
+        margin-bottom: 6px;
+    }
+
+    .card-footer-line {
+      height: 3px;
+      width: 100%;
+      background: linear-gradient(90deg, #FF6464, #3B82F6);
+      margin-top: auto;
+      border-radius: 2px;
+    }
+
+    
+    .lets-talk-box {
+      background-color: #1A2C5B; 
+      border-radius: 16px;
+      padding: 40px 50px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; 
+    }
+    
+    .talk-text p {
+      color: #E0E0E0;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .talk-text h2 {
+      color: white;
+      font-size: 42px; 
+      line-height: 1.2;
+    }
+    
+    .talk-action-button {
+      background-color: #F0F0F0;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #1A2C5B;
+      font-size: 28px;
+      
+      clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .talk-action-button:hover {
+      background-color: #ffffff;
+      transform: scale(1.1); 
+    }
+
+
+    
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; line-height: 50px; }
+      .hero-container { flex-direction: column-reverse; text-align: center; }
+      .hero-image img { margin-bottom: 30px; }
+      
+      .lets-talk-box {
+          flex-direction: column; 
+          text-align: center;
+          gap: 30px; 
+          padding: 40px 30px;
+      }
+
+      .talk-text h2 {
+          font-size: 36px;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#Skill">Skills</a></li>
+        <li><a href="#Project">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li> 
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-text">
+        <h1>Hi, I am Maryam,<br>Web Developer</h1>
+        <p>I am a web developer with a passion for creating beautiful and functional websites.
+          Experienced in building responsive and user-friendly websites using HTML, CSS, and JavaScript.
+          Proficient in React.js and Node.js, with strong problem-solving and communication skills.</p>
+        <a href="#" class="btn-resume">Download Resume</a>
+      </div>
+      <div class="hero-image">
+        <img src="doll.jpeg" alt="Maryam's photo" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block" id="about">
+    <div class="card-row">
+      
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon"><i class="fas fa-user-circle"></i></div>
+          <h3 class="card-title">About Me</h3>
+        </div>
+        <div class="card-body">
+            <p>I am a web developer with a passion for creating beautiful and functional websites.
+
+                Proficient in React.js and Node.js, with strong problem-solving and communication skills.</p>
+        </div>
+        <div class="card-footer-line"></div>
+      </div>
+
+
+      <div class="card" id="Skill">
+        <div class="card-header">
+          <div class="card-icon"><i class="fas fa-code"></i></div>
+          <h3 class="card-title">Skills</h3>
+        </div>
+        <div class="card-body">
+           <ul>
+              <li><i class="fab fa-html5"></i> HTML</li>
+              <li><i class="fab fa-css3-alt"></i> CSS</li>
+              <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+              <li><i class="fab fa-js"></i> JavaScript</li>
+              <li><i class="fab fa-react"></i> React</li>
+              <li><i class="fab fa-node-js"></i> Next.js</li>
+            </ul>
+        </div>
+        <div class="card-footer-line"></div>
+      </div>
+
+      
+      <div class="card" id="Project">
+        <div class="card-header">
+          <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3 class="card-title">Projects</h3>
+        </div>
+        <div class="card-body">
+          <h4>Signup Form</h4>
+          <p>A clean signup form using HTML and CSS.</p>
+          <a href="https://github.com/maryam2622/signup" target="_blank">View on GitHub</a>
+        </div>
+        <div class="card-footer-line"></div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <section id="contact" class="section-block">
+    <div class="lets-talk-box">
+      <div class="talk-text">
+        
+        <h2>Let's Talk!</h2>
+      </div>
+      <a href="page.html" class="talk-action-button"> 
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+      
+  </section>
+</body>
+</html>
