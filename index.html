@@ -573,25 +573,26 @@
             <form class="contact-form">
                 <div class="form-row">
                     <div class="input-group">
-                        <input type="text" name="name" placeholder="Name">
+                        <input type="text" name="name" id="name" placeholder="Name">
                     </div>
                     <div class="input-group">
-                        <input type="email" name="email" placeholder="Email">
+                        <input type="email" name="email" id="email" placeholder="Email">
                     </div>
                 </div>
                 <div class="input-group">
-                    <input type="text" name="subject" placeholder="Subject">
+                    <input type="text" name="subject" id="subject" placeholder="Subject">
                 </div>
                 <div class="input-group">
-                    <textarea name="message" placeholder="Message"></textarea>
+                    <textarea name="message" id="message" placeholder="Message"></textarea>
                 </div>
                 <div class="button-container">
-                    <button type="submit">Submit</button>
+                    <button type="submit" onclick="submitForm(event)">Submit</button>
                 </div>
             </form>
         </div>
     </section>
 
 </body>
+<script src="index.js"></script>
 
 </html>
